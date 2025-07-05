@@ -16,3 +16,4 @@ Thumbs.db
 
 # Local SQLite database files
 *.db
+.bruin.yml
