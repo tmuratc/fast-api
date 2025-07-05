@@ -13,3 +13,6 @@ venv/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local SQLite database files
+*.db
