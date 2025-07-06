@@ -63,5 +63,5 @@ https://<YOUR_CLOUD_RUN_URL>/docs
 ## 👨‍💻 Geliştirici
 
 **Talha Murat Çamlı**  
-[LinkedIn](https://www.linkedin.com/in/tmuratc)  
+[LinkedIn](https://www.linkedin.com/in/talhamuratcamli)  
 📍 Powered by FastAPI & GCP  
