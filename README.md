@@ -1,18 +1,18 @@
 # 🛡️ Clans API
 
-Basit, güvenli ve ölçeklenebilir bir REST API. Clans (klanlar) kaydını tutmak için geliştirilmiştir. FastAPI + PostgreSQL + GCP (Cloud Run & Cloud SQL) altyapısı üzerine kuruludur.
+A simple, secure, and scalable REST API. It was developed to keep records of Clans. Built on FastAPI + PostgreSQL + GCP (Cloud Run & Cloud SQL) infrastructure.
 
-## 🚀 Özellikler
+## 🚀 Features
 
-- `GET/clans`: Tüm klanları listeler  
-- `POST/clans`: Yeni bir klan kaydı oluşturur  
-- Swagger UI otomatik olarak entegre (`/docs`)  
-- Cloud Run üzerinden **public erişime açık**  
-- Cloud SQL (PostgreSQL) veritabanı bağlantısı  
-- Middleware üzerinden uzun veri girişleri engellenmiştir  
-- GCP Artifact Registry üzerinden container build yapılmıştır  
+- `GET/clans`: Lists all clans  
+- `POST/clans`: Creates a new clan record  
+- Swagger UI automatically integrated (`/docs`)  
+- Publicly accessible via Cloud Run  
+- Cloud SQL (PostgreSQL) database connection  
+- Long data entries are blocked through middleware  
+- Container build is done via GCP Artifact Registry  
 
-## 🏗️ Kullanılan Teknolojiler
+## 🏗️ Technologies Used
 
 - [FastAPI](https://fastapi.tiangolo.com/)  
 - [SQLAlchemy](https://www.sqlalchemy.org/)  
@@ -21,22 +21,22 @@ Basit, güvenli ve ölçeklenebilir bir REST API. Clans (klanlar) kaydını tutm
 - [Docker](https://www.docker.com/)  
 - [Uvicorn](https://www.uvicorn.org/)  
 
-## ⚙️ Kurulum
+## ⚙️ Setup
 
-### 1. .env dosyasını oluştur
+### 1. Create the .env file
 
 ```
 DATABASE_URL=postgresql://<username>:<password>@<host>:<port>/<db_name>
 ```
 
-### 2. Docker image oluştur ve push et
+### 2. Build and push the Docker image
 
 ```bash
 docker build -t gcr.io/<PROJECT_ID>/clans-api .
 docker push gcr.io/<PROJECT_ID>/clans-api
 ```
 
-### 3. Cloud Run’a deploy et
+### 3. Deploy to Cloud Run
 
 ```bash
 gcloud run deploy clans-api \
@@ -47,20 +47,20 @@ gcloud run deploy clans-api \
   --update-env-vars DATABASE_URL=postgresql://<username>:<password>@<host>:<port>/<db_name>
 ```
 
-## 🌐 API Dokümantasyonu
+## 🌐 API Documentation
 
 Swagger UI:  
 ```
 https://<YOUR_CLOUD_RUN_URL>/docs
 ```
 
-## 🔐 Güvenlik & Limitler
+## 🔐 Security & Limitations
 
-- `type` ve `name` alanlarına **maksimum uzunluk** sınırı kondu.  
-- Middleware ile çok uzun body’ler reddediliyor.  
-- İleride auth, rate limit vb. kolayca entegre edilebilir.  
+- **Maximum length** are set for `type` ve `name` fields.  
+- Very long bodies are rejected by middleware.  
+- Auth, rate limiting, etc. can be easily integrated in the future. 
 
-## 👨‍💻 Geliştirici
+## 👨‍💻 Developer
 
 **Talha Murat Çamlı**  
 [LinkedIn](https://www.linkedin.com/in/talhamuratcamli)  
